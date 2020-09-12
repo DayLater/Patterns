@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Decorator.Beverages;
+using Decorator.Supplements;
 
 namespace Decorator
 {
@@ -10,6 +8,10 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
+            var teaWithSugarAndMilk = new Milk(new Sugar(new Tea()));
+            var coffeeWithChocolate = new Chocolate(new Coffee());
+            Console.WriteLine(coffeeWithChocolate);
+            Console.WriteLine(teaWithSugarAndMilk);
         }
     }
 }
